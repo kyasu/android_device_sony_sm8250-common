@@ -103,7 +103,7 @@ setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 write_headers "pdx203 pdx206"
 
 # The standard common blobs
-write_makefiles "${MY_DIR}/proprietary-files.txt" true
+write_makefiles "${MY_DIR}/proprietary-files.txt"
 
 # Finish
 write_footers
@@ -117,7 +117,7 @@ if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
     write_headers
 
     # The standard device blobs
-    write_makefiles "${MY_DIR}/../${DEVICE}/proprietary-files.txt" true
+    write_makefiles "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-files.txt"
 
     if [ -f "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-firmware.txt" ]; then
         append_firmware_calls_to_makefiles "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-firmware.txt"
